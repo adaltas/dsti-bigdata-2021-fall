@@ -1,6 +1,11 @@
 # Spark DataFrames Lab resources
 
-Connection to Zeppelin
+## Connect to the Hadoop custer
+
+With OpenVPN and Putty
+
+## Connection to Zeppelin
+
 Navigate to http://zep-1.au.adaltas.cloud:9995 with your browser
 Login using your Adaltas cloud credentials
 
