@@ -34,4 +34,7 @@ def find_most_frequent(kv_array):
 
 
 if __name__ == '__main__':
-    write_kv_dict(find_most_frequent(read_kv_array(sys.stdin)))
+    try:
+        write_kv_dict(find_most_frequent(read_kv_array(sys.stdin)))
+    except:
+        print(sys.stdin)
