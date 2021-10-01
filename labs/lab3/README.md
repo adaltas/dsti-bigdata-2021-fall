@@ -29,16 +29,16 @@ uncompromised   1
    cd dsti-bigdata-2021-fall/labs/lab3
    ```
 3. Take a look at the `word_count/mapper.py` and `word_count/reducer.py` files. Tip: open with `vim` for syntax highlighting.
-4. Take a look at the input we will use for the MapReduce in HDFS at `/education/dsti/big-data/2021/fall/resources/lab3/mapred-input`
+4. Take a look at the input we will use for the MapReduce in HDFS at `/education/dsti_2021_fall_bda/resources/lab3/mapred-input`
 5. The following command will run a MapReduce with 2 reducers, so it will produce 2 output files:
    ```sh
    mapred streaming -D mapreduce.job.reduces=2 \
      -files word_count/mapper.py,word_count/reducer.py \
-     -input /education/dsti/big-data/2021/fall/resources/lab3/mapred-input \
-     -output "/education/dsti/big-data/2021/fall/$USER/lab3/word-count" \
+     -input /education/dsti_2021_fall_bda/resources/lab3/mapred-input \
+     -output "/education/dsti_2021_fall_bda/$USER/lab3/word-count" \
      -mapper "python3 mapper.py" -reducer "python3 reducer.py"
    ```
-6. Check the output at `/education/dsti/big-data/2021/fall/$USER/lab3/word-count`
+6. Check the output at `/education/dsti_2021_fall_bda/$USER/lab3/word-count`
 
 ### Design a MapReduce job to get the most frequent word
 
