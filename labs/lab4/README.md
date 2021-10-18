@@ -17,9 +17,8 @@ Using the official [Hive Data Definition Langage](https://cwiki.apache.org/confl
 1. Using the HDFS CLI, take a look at the data used for this lab at `/education/dsti_2021_fall_bda_1/resources/lab4/nyc_drivers/drivers.csv`
 2. Copy the `nyc_drivers` folder to your user directory in HDFS:
    ```sh
-   export dsti_group=1
-   hdfs dfs -mkdir -p "/education/dsti_2021_fall_bda_$dsti_group/$USER/lab4"
-   hdfs dfs -cp /education/dsti_2021_fall_bda_$dsti_group/resources/lab4/nyc_drivers "/education/dsti_2021_fall_bda_$dsti_group/$USER/lab4/"
+   hdfs dfs -mkdir -p "/education/dsti_2021_fall_bda/$USER/lab4"
+   hdfs dfs -cp /education/dsti_2021_fall_bda/resources/lab4/nyc_drivers "/education/dsti_2021_fall_bda/$USER/lab4/"
    ```
 3. Open a Beeline session by typing `beeline`
 4. Create an external table targeting our data with this statement (to be completed, replace `YOUR_USERNAME`):
