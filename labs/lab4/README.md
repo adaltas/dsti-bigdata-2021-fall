@@ -49,7 +49,7 @@ STORED AS ORC;
    2. The column `name` devided into `first_name` and `last_name`
    3. The column `location` renamed as `address` (because `LOCATION` is a Hive keyword)
    4. The column `certified` as a `BOOLEAN`
-2. Check that your table was created using the HDFS CLI at `/warehouse/tablespace/managed/hive/dsti_2021_fall_bda_1.db/$USER_nyc_drivers` (should be empty)
+2. Check that your table was created using the HDFS CLI at `/warehouse/tablespace/managed/hive/dsti_2021_fall_bda.db/$USER_nyc_drivers` (should be empty)
 
 ### Load data from the CSV table to the ORC table
 
@@ -60,4 +60,4 @@ Now we want to populate our ORC table from our CSV table. Using the [Hive Data M
    - Transform `certified` from `STRING` to `BOOLEAN`
    - Rename `location` to `address`
 2. Execute your query
-3. Check what the data looks like in the managed table using the HDFS CLI at `/warehouse/tablespace/managed/hive/dsti_2021_fall_bda_1.db/$USER_nyc_drivers`
+3. Check what the data looks like in the managed table using the HDFS CLI at `/warehouse/tablespace/managed/hive/dsti_2021_fall_bda.db/$USER_nyc_drivers`
