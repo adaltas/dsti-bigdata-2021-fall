@@ -10,6 +10,7 @@
 ### Input tables
 
 In this lab we will the 4 IMDb datasets that are located in your group database:
+
 - `imdb_name_basics`
 - `imdb_title_basics`
 - `imdb_title_crew`
@@ -20,7 +21,7 @@ For more informations about the datasets: [IMDb Datasets](https://www.imdb.com/i
 ### Queries
 
 1. Number of titles with duration superior than 2 hours.
-2. Average duration of titles containing the string "world".
+2. Average duration of titles containing the word "world".
 3. Average rating of titles having the genre "Comedy"
 4. Average rating of titles not having the genre "Comedy"
 5. Top 5 movies directed by Tarantino
