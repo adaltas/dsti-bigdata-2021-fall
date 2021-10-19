@@ -27,7 +27,8 @@
 
   <action name="create-csv-table" cred="hive-creds">
     <hive2 xmlns="uri:oozie:hive2-action:0.2">
-      <!-- Complete here -->
+      <jdbc-url>${jdbcUrl}</jdbc-url>
+      <script>scripts/create_drivers_ext.hql</script>
       <param>hiveUsername=${hiveUsername}</param>
       <param>username=${username}</param>
     </hive2>
