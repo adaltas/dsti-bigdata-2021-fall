@@ -1,4 +1,4 @@
-<workflow-app xmlns="uri:oozie:workflow:0.4" name = "nycDrivers.ingestion">
+<workflow-app xmlns="uri:oozie:workflow:0.4" name="nycDrivers.ingestion">
   <global>
     <job-tracker>${jobTracker}</job-tracker>
     <name-node>${nameNode}</name-node>
