@@ -1,0 +1,8 @@
+<coordinator-app name="nycDrivers.ingestion.daily" frequency="0 ${runHour} * * *" start="${startDate}T${startHour}Z" end="${endDate}T${endHour}Z" timezone="${timezone}"
+  xmlns="uri:oozie:coordinator:0.5">
+  <action>
+    <workflow>
+      <app-path>${workflowAppPath}</app-path>
+    </workflow>
+  </action>
+</coordinator-app>
