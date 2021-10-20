@@ -17,7 +17,7 @@
     </credential>
   </credentials>
 
-  <start to="create-csv-table"/>
+  <start to="fork-create-tables"/>
 
   <!-- 
     Some HDFS actions could be done before.
@@ -25,25 +25,29 @@
     You need to move/copy it to the csv table folder.
   -->
 
+  <fork name="fork-create-tables">
+    <path start="create-csv-table"/>
+    <path start="create-orc-table"/>
+  </fork>
   <action name="create-csv-table" cred="hive-creds">
     <hive2 xmlns="uri:oozie:hive2-action:0.2">
       <jdbc-url>${jdbcUrl}</jdbc-url>
       <script>scripts/create_drivers_ext.hql</script>
       <param>hiveUsername=${hiveUsername}</param>
     </hive2>
-    <ok to="create-orc-table"/>
+    <ok to="join-create-tables"/>
     <error to="kill-on-error"/>
   </action>
-
   <action name="create-orc-table" cred="hive-creds">
     <hive2 xmlns="uri:oozie:hive2-action:0.2">
       <jdbc-url>${jdbcUrl}</jdbc-url>
       <script>scripts/create_drivers_orc.hql</script>
       <param>hiveUsername=${hiveUsername}</param>
     </hive2>
-    <ok to="insert-to-orc-from-csv"/>
+    <ok to="join-create-tables"/>
     <error to="kill-on-error"/>
   </action>
+  <join name="join-create-tables" to="insert-to-orc-from-csv"/>
 
   <action name="insert-to-orc-from-csv" cred="hive-creds">
     <hive2 xmlns="uri:oozie:hive2-action:0.2">
