@@ -17,7 +17,7 @@
     </credential>
   </credentials>
 
-  <start to="create-csv-table" />
+  <start to="create-csv-table"/>
 
   <!-- 
     Some HDFS actions could be done before.
@@ -30,13 +30,30 @@
       <jdbc-url>${jdbcUrl}</jdbc-url>
       <script>scripts/create_drivers_ext.hql</script>
       <param>hiveUsername=${hiveUsername}</param>
-      <param>username=${username}</param>
     </hive2>
-    <ok to="end" />
-    <error to="kill-on-error" />
+    <ok to="create-orc-table"/>
+    <error to="kill-on-error"/>
   </action>
 
-  <!-- Rest of the steps here  -->
+  <action name="create-orc-table" cred="hive-creds">
+    <hive2 xmlns="uri:oozie:hive2-action:0.2">
+      <jdbc-url>${jdbcUrl}</jdbc-url>
+      <script>scripts/create_drivers_orc.hql</script>
+      <param>hiveUsername=${hiveUsername}</param>
+    </hive2>
+    <ok to="insert-to-orc-from-csv"/>
+    <error to="kill-on-error"/>
+  </action>
+
+  <action name="insert-to-orc-from-csv" cred="hive-creds">
+    <hive2 xmlns="uri:oozie:hive2-action:0.2">
+      <jdbc-url>${jdbcUrl}</jdbc-url>
+      <script>scripts/insert_to_orc_from_csv.hql</script>
+      <param>hiveUsername=${hiveUsername}</param>
+    </hive2>
+    <ok to="end"/>
+    <error to="kill-on-error"/>
+  </action>
 
   <kill name="kill-on-error">
     <message>Job failed</message>
