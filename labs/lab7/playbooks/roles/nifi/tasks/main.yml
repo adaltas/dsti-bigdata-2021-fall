@@ -2,7 +2,7 @@
 - name: Download NiFi 1.9.2 binaries
   get_url:
     url: https://archive.apache.org/dist/nifi/1.9.2/nifi-1.9.2-bin.tar.gz
-    dest: /tmp/
+    dest: /tmp/nifi-1.9.2-bin.tar.gz
 
 - name: Unpack NiFi binaries
   unarchive:
