@@ -45,11 +45,11 @@ Before you can start the lab, you have to:
 
 5. Clone the lab repository to your computer:
    ```
-   git clone https://github.com/adaltas/dsti-bigdata-2021-spring.git
+   git clone https://github.com/adaltas/dsti-bigdata-2021-fall.git
    ```
-6. Go to the `nifi-kafka` directory:
+6. Go to the `lab7` directory:
    ```
-   cd dsti-bigdata-2021-spring/labs/lab7
+   cd dsti-bigdata-2021-fall/labs/lab7
    ```
 
 ## Lab
@@ -60,7 +60,7 @@ In the lab, we will use the `ansible_local` provisioner, so Ansible will be auto
 
 ### Resources
 
-In the `nifi-kafka` directory, you will find:
+In the `lab7` directory, you will find:
 
 - A `Vagrantfile` that defines the VMs to be managed by Vagrant (1 CentOS 7 VM named `nifi_server` in our case)
 - A `playbooks/` directory that contains Ansible playbooks to install and start NiFi and Kafka
