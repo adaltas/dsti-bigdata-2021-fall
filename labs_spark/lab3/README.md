@@ -22,7 +22,7 @@ To stream the NY datasets:
 
 - Go to this directory:
   ```
-  cd dsti-bigdata-2021-fall/labs/lab3
+  cd dsti-bigdata-2021-fall/labs_spark/lab3
   ```
 - Create a checkpoint directory for Spark Streaming in your HDFS personal folder:
   ```sh
